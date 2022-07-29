@@ -55,6 +55,7 @@ bool ALLOWONDEMAND   = true; // enable on demand
 int  ONDDEMANDPIN    = 0; // gpio for button
 bool WMISBLOCKING    = true; // use blocking or non blocking mode, non global params wont work in non blocking
 
+int DELAY_TIME = 10000; // 10 sec.
 
 void setup() {
     // WiFi.mode(WIFI_STA); // explicitly set mode, esp defaults to STA+AP
@@ -227,6 +228,6 @@ void loop() {
     }
     timeSync(TZ_INFO, "pool.ntp.org", "time.nis.gov");     
     digitalWrite(2,HIGH);   
-    delay(10000);
+    delay(DELAY_TIME);
     digitalWrite(2,LOW);       
 }
